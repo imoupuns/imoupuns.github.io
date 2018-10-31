@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <title>Imoupuns</title>
+    <link rel="icon" type="image/png" href="img/favicon.png"> 
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <body>
+    <h1 id="q", style="cursor:pointer"></h1>
+    <p id="a"></p>
+    <script type="text/javascript">
+        var data = [{"q" : "is a structural support", "a" : "beamouto"},
+            {"q" : "strips your rank", "a" : "demouto"},
+            {"q" : "gets dumped in protest", "a" : "Boston teamouto"},
+            {"q" : "levies fines and tariffs", "a" : "feemouto"},
+            {"q" : "is a mobile phone", "a" : "imoutorola"}];
+        var selected = data[Math.floor(Math.random() * data.length)];
+        var question = document.getElementById("q");
+        question.innerHTML = `What do you call a little sister who ${selected["q"]}?`;
+        question.onclick = show;
+        function show() {
+            var answer = selected["a"];
+            var prefix = isVowel(answer.charAt(0)) ? "An" : "A";
+            document.getElementById("a").innerHTML = `${prefix} ${answer}!`;
+        }
+        function isVowel(str) {
+            return ['a', 'e', 'i', 'o', 'u'].indexOf(str.toLowerCase()) !== -1;
+        }
+    </script>
+    </body>
+</html>

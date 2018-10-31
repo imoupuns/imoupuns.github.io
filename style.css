@@ -1,0 +1,14 @@
+body {
+    width: 640px;
+    height: 480px;
+    background-image: url("img/background.png");
+    background-repeat: no-repeat;
+}
+h1 {
+    text-align: center;
+    font-family: sans-serif;
+}
+p {
+    text-align: center;
+    font-family: sans-serif;
+}
