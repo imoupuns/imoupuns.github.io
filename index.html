@@ -6,20 +6,66 @@
     <body>
     <h1 id="q", style="cursor:pointer"></h1>
     <p id="a"></p>
+    <p id="r", style="cursor:pointer"></p>
     <script type="text/javascript">
-        var data = [{"q" : "is a structural support", "a" : "beamouto"},
+        // Many imoupuns were generously provided by Beth Martyn.
+        var data = [
+            {"q" : "is a structural support", "a" : "beamouto"},
             {"q" : "strips your rank", "a" : "demouto"},
             {"q" : "gets dumped in protest", "a" : "Boston teamouto"},
             {"q" : "levies fines and tariffs", "a" : "feemouto"},
-            {"q" : "is a mobile phone", "a" : "imoutorola"}];
+            {"q" : "is a mobile phone", "a" : "imoutorola"},
+            {"q" : "is far away", "a" : "remouto"},
+            {"q" : "is sad and edgy", "a" : "emouto"},
+            {"q" : "loves honey", "a" : "beemouto"},
+            {"q" : "gets old in about a week", "a" : "memeouto"},
+            {"q" : "gets bad grades", "a" : "D-mouto"},
+            {"q" : "makes sweet vidya games", "a" : "Miyamouto"},
+            {"q" : "is into BMX", "a" : "imoutocross"},
+            {"q" : "is elegant and overpriced", "a" : "iMouto"},
+            {"q" : "works well with others", "a" : "teamouto"},
+            {"q" : "helps you sleep at night", "a" : "dreamouto"},
+            {"q" : "is salty and moist", "a" : "seamouto"},
+            {"q" : "is thick, smooth, and white", "a" : "creamouto"},
+            {"q" : "is male", "a" : "hemouto"},
+            {"q" : "just can't hold it in", "a" : "peemouto"},
+            {"q" : "you've seen before", "a" : "re-mouto"},
+            {"q" : "is a free sample", "a" : "demo-to"},
+            {"q" : "looks like a little sister", "a" : "seemouto"},
+            {"q" : "can send money digitally", "a" : "Venmouto"},
+            {"q" : "can drive herself", "a" : "Waymouto"},
+            {"q" : "has motion controls", "a" : "Wiimouto"},
+            {"q" : "loves feet", "a" : "imoutoe"},
+            {"q" : "surrounds a castle", "a" : "imoato"},
+            {"q" : "is made of text", "a" : "imouticon"},
+            {"q" : "loves golf", "a" : "teemouto"},
+            {"q" : "fits perfectly inside", "a" : "keymouto"},
+            {"q" : "is popular on Twitch", "a" : "streamouto"},
+            {"q" : "is extra long", "a" : "limouto"},
+            {"q" : "gives you wood", "a" : "treemouto"},
+            {"q" : "is virtual", "a" : "e-mouto"},
+            {"q" : "is grave", "a" : "grimouto"},
+            {"q" : "ain't the sharpest tool in the shed", "a" : "dimouto"},
+            {"q" : "loves singing", "a" : "gleemouto"},
+            {"q" : "needs stitches", "a" : "seamouto"},
+            {"q" : "has judged you worthy", "a" : "deemouto"},
+            {"q" : "is French", "a" : "Le Mouto"},
+            {"q" : "cures cancer", "a" : "chemouto"},
+        ];
         var selected = data[Math.floor(Math.random() * data.length)];
         var question = document.getElementById("q");
         question.innerHTML = `What do you call a little sister who ${selected["q"]}?`;
         question.onclick = show;
         function show() {
-            var answer = selected["a"];
-            var prefix = isVowel(answer.charAt(0)) ? "An" : "A";
-            document.getElementById("a").innerHTML = `${prefix} ${answer}!`;
+            var answer = document.getElementById("a");
+            var answerText = selected["a"];
+            var prefix = isVowel(answerText.charAt(0)) ? "An" : "A";
+            answer.innerHTML = `${prefix} ${answerText}!`;
+            answer.style.fontSize = "x-large";
+            var refresh = document.getElementById("r");
+            refresh.innerHTML = "(Reload)";
+            refresh.onclick = function() {window.location.reload()};
+            refresh.style.fontSize = "small";
         }
         function isVowel(str) {
             return ['a', 'e', 'i', 'o', 'u'].indexOf(str.toLowerCase()) !== -1;
